@@ -23,7 +23,6 @@
 <style>
 
 /* BASE */
-
 body{
 font-family:'Poppins',sans-serif;
 background:#f8f9fa;
@@ -31,7 +30,6 @@ color:#333;
 }
 
 /* NAVBAR */
-
 .navbar{
 background:#0b3c5d;
 position:sticky;
@@ -45,7 +43,6 @@ font-size:22px;
 }
 
 /* HORARIO */
-
 .horario{
 background:#e9f1f7;
 text-align:center;
@@ -54,7 +51,6 @@ font-weight:500;
 }
 
 /* HERO */
-
 .hero{
 background:linear-gradient(rgba(11,60,93,0.7),rgba(11,60,93,0.7)),
 url("https://images.unsplash.com/photo-1574258495973-f010dfbb5371");
@@ -76,7 +72,6 @@ margin-bottom:30px;
 }
 
 /* BOTÃO */
-
 .btn-agendar{
 background:white;
 color:#0b3c5d;
@@ -93,7 +88,6 @@ transform:scale(1.05);
 }
 
 /* HISTORIA */
-
 .historia{
 padding:90px 0;
 background:white;
@@ -105,7 +99,6 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* SERVIÇOS */
-
 .servicos{
 padding:90px 0;
 }
@@ -118,7 +111,6 @@ margin-bottom:50px;
 }
 
 /* GRID */
-
 .grid-servicos{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -128,7 +120,6 @@ margin:0 auto;
 }
 
 /* CARD */
-
 .card-servico{
 position:relative;
 border-radius:14px;
@@ -138,10 +129,7 @@ box-shadow:0 10px 25px rgba(0,0,0,0.08);
 cursor:pointer;
 }
 
-
-
 /* IMAGEM */
-
 .card-servico img{
 width: 100%;
 height: 100%;
@@ -150,13 +138,11 @@ transition: transform 0.6s cubic-bezier(0.25,1,0.5,1);
 }
 
 /* ZOOM */
-
 .card-servico:hover img{
 transform:scale(1.1);
 }
 
 /* OVERLAY */
-
 .overlay{
 position:absolute;
 inset:0;
@@ -168,30 +154,7 @@ padding:20px;
 color:white;
 }
 
-.overlay h3{
-font-size:20px;
-font-weight:600;
-margin:0;
-}
-
-.overlay p{
-font-size:14px;
-margin-top:4px;
-opacity:0.9;
-}
-
-/* RESPONSIVO */
-
-@media (max-width:576px){
-
-.grid-servicos{
-grid-template-columns:1fr;
-}
-
-}
-
 /* CTA */
-
 .cta{
 background:#0b3c5d;
 color:white;
@@ -199,52 +162,25 @@ padding:90px 0;
 text-align:center;
 }
 
-/* ANIMAÇÃO BOTÃO */
-
-@keyframes pulseAgendar{
-0%{transform:scale(1);}
-50%{transform:scale(1.05);}
-100%{transform:scale(1);}
-}
-
-.btn-cta{
-animation:pulseAgendar 2s infinite;
-}
-
-.btn-cta:hover{
-animation-play-state:paused;
-transform:translateY(-6px) scale(1.1);
-box-shadow:0 15px 30px rgba(0,0,0,0.25);
-}
-
 /* APP */
-
 .app{
 padding:90px 0;
 background:white;
 }
 
 /* LOCALIZAÇÃO */
-
 .localizacao{
 padding:90px 0;
 }
 
 /* FOOTER */
-
 .footer{
 background:#0b3c5d;
 color:white;
 padding:50px 0;
 }
 
-.footer a{
-color:white;
-text-decoration:none;
-}
-
 /* BARRA APP */
-
 .appbar{
 position:fixed;
 bottom:0;
@@ -254,9 +190,16 @@ color:white;
 display:flex;
 justify-content:center;
 align-items:center;
-gap:20px;
-padding:12px;
+gap:10px;
+padding:10px;
 z-index:999;
+flex-wrap:wrap;
+text-align:center;
+}
+
+.appbar p{
+margin:0;
+font-size:14px;
 }
 
 .appbar a{
@@ -268,12 +211,11 @@ text-decoration:none;
 font-weight:600;
 }
 
-/* WHATSAPP FLUTUANTE */
-
+/* WHATSAPP */
 .whatsapp-float{
 position:fixed;
 right:20px;
-bottom:110px; /* fica acima da appbar */
+bottom:110px;
 background:#25D366;
 color:white;
 font-size:26px;
@@ -286,16 +228,66 @@ border-radius:50%;
 box-shadow:0 8px 20px rgba(0,0,0,0.25);
 z-index:2000;
 text-decoration:none;
-transition:0.3s;
 }
 
-.whatsapp-float:hover{
-transform:scale(1.1);
-box-shadow:0 10px 25px rgba(0,0,0,0.35);
+/* 🔥 RESPONSIVIDADE REAL */
+@media (max-width:768px){
+
+.hero{
+padding:80px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+/* HISTORIA desce mais */
+.historia{
+padding:60px 15px;
+margin-top:20px;
+}
+
+.historia .row{
+flex-direction:column;
+}
+
+.historia img{
+margin-bottom:20px;
+}
+
+/* SERVIÇOS */
+.grid-servicos{
+grid-template-columns:1fr;
+}
+
+/* APP seção */
+.app .row{
+flex-direction:column;
+text-align:center;
+}
+
+.app img{
+margin-top:20px;
+}
+
+/* EVITA appbar cobrir conteúdo */
+body{
+padding-bottom:80px;
+}
+
+/* AJUSTE WHATSAPP */
+.whatsapp-float{
+bottom:90px;
+}
+
 }
 
 </style>
-
 </head>
 
 <body>
@@ -346,7 +338,7 @@ Agendar exame
 <div class="row align-items-center">
 
 <div class="col-md-6" data-aos="fade-right">
-<img src="imagens/minha-clinica.jpg.jpeg" class="img-fluid">
+<img src="imagens/minha-clinica.jpg" class="img-fluid">
 </div>
 
 <div class="col-md-6" data-aos="fade-left">
@@ -381,7 +373,7 @@ Nosso compromisso é proporcionar conforto, estilo e confiança para que você e
 <div class="grid-servicos">
 
 <div class="card-servico">
-<img src="imagens/oculos-grau. jpg.jpeg">
+<img src="imagens/oculos-grau.jpg">
 <div class="overlay">
 <h3>Óculos de Grau</h3>
 <p>Armações modernas e lentes de alta qualidade.</p>
@@ -389,7 +381,7 @@ Nosso compromisso é proporcionar conforto, estilo e confiança para que você e
 </div>
 
 <div class="card-servico">
-<img src="imagens/oculos-sol. jpg.jpeg">
+<img src="imagens/oculos-sol. jpg">
 <div class="overlay">
 <h3>Óculos de Sol</h3>
 <p>Proteção UV com estilo.</p>
@@ -397,7 +389,7 @@ Nosso compromisso é proporcionar conforto, estilo e confiança para que você e
 </div>
 
 <div class="card-servico">
-<img src="imagens/lente-contato. jpg.jpeg">
+<img src="imagens/lente-contato. jpg">
 <div class="overlay">
 <h3>Lentes de Contato</h3>
 <p>Conforto e liberdade.</p>
@@ -405,7 +397,7 @@ Nosso compromisso é proporcionar conforto, estilo e confiança para que você e
 </div>
 
 <div class="card-servico">
-<img src="imagens/exame-visao. jpg.jpeg">
+<img src="imagens/exame-visao. jpg">
 <div class="overlay">
 <h3>Exame de Visão</h3>
 <p>Avaliação completa da sua visão.</p>
