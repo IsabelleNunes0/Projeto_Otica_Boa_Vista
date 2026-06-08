@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
@@ -23,13 +24,16 @@
 <style>
 
 /* BASE */
+
 body{
 font-family:'Poppins',sans-serif;
 background:#f8f9fa;
 color:#333;
+transition:0.3s;
 }
 
 /* NAVBAR */
+
 .navbar{
 background:#0b3c5d;
 position:sticky;
@@ -43,6 +47,7 @@ font-size:22px;
 }
 
 /* HORARIO */
+
 .horario{
 background:#e9f1f7;
 text-align:center;
@@ -51,8 +56,10 @@ font-weight:500;
 }
 
 /* HERO */
+
 .hero{
-background:linear-gradient(rgba(11,60,93,0.7),rgba(11,60,93,0.7)),
+background:
+linear-gradient(rgba(11,60,93,0.7),rgba(11,60,93,0.7)),
 url("https://images.unsplash.com/photo-1574258495973-f010dfbb5371");
 background-position:center;
 background-size:cover;
@@ -71,7 +78,8 @@ font-size:18px;
 margin-bottom:30px;
 }
 
-/* BOTÃO */
+/* BOTÕES */
+
 .btn-agendar{
 background:white;
 color:#0b3c5d;
@@ -80,7 +88,7 @@ border-radius:30px;
 text-decoration:none;
 font-weight:600;
 display:inline-block;
-transition:all .3s ease;
+transition:0.3s;
 }
 
 .btn-agendar:hover{
@@ -88,6 +96,7 @@ transform:scale(1.05);
 }
 
 /* HISTORIA */
+
 .historia{
 padding:90px 0;
 background:white;
@@ -99,6 +108,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* SERVIÇOS */
+
 .servicos{
 padding:90px 0;
 }
@@ -111,6 +121,7 @@ margin-bottom:50px;
 }
 
 /* GRID */
+
 .grid-servicos{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -120,6 +131,7 @@ margin:0 auto;
 }
 
 /* CARD */
+
 .card-servico{
 position:relative;
 border-radius:14px;
@@ -130,19 +142,22 @@ cursor:pointer;
 }
 
 /* IMAGEM */
+
 .card-servico img{
-width: 100%;
-height: 100%;
+width:100%;
+height:100%;
 object-fit:cover;
-transition: transform 0.6s cubic-bezier(0.25,1,0.5,1);
+transition:transform 0.6s cubic-bezier(0.25,1,0.5,1);
 }
 
 /* ZOOM */
+
 .card-servico:hover img{
 transform:scale(1.1);
 }
 
 /* OVERLAY */
+
 .overlay{
 position:absolute;
 inset:0;
@@ -155,6 +170,7 @@ color:white;
 }
 
 /* CTA */
+
 .cta{
 background:#0b3c5d;
 color:white;
@@ -163,24 +179,41 @@ text-align:center;
 }
 
 /* APP */
+
 .app{
 padding:90px 0;
 background:white;
 }
 
 /* LOCALIZAÇÃO */
+
 .localizacao{
 padding:90px 0;
 }
 
 /* FOOTER */
+
 .footer{
 background:#0b3c5d;
 color:white;
 padding:50px 0;
 }
 
-/* BARRA APP */
+/* LINKS FOOTER */
+
+.footer a,
+.footer a:visited,
+.footer a:active{
+color:white !important;
+text-decoration:none;
+}
+
+.footer a:hover{
+color:#ddd !important;
+}
+
+/* APPBAR */
+
 .appbar{
 position:fixed;
 bottom:0;
@@ -212,6 +245,7 @@ font-weight:600;
 }
 
 /* WHATSAPP */
+
 .whatsapp-float{
 position:fixed;
 right:20px;
@@ -230,7 +264,48 @@ z-index:2000;
 text-decoration:none;
 }
 
-/* 🔥 RESPONSIVIDADE REAL */
+/* ACESSIBILIDADE */
+
+.acessibilidade{
+margin-top:30px;
+padding-top:25px;
+border-top:1px solid rgba(255,255,255,0.2);
+text-align:center;
+}
+
+.acessibilidade h5{
+font-size:18px;
+margin-bottom:15px;
+font-weight:600;
+color:white;
+}
+
+.acessibilidade-buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.acessibilidade-buttons button{
+background:white;
+border:none;
+padding:10px 18px;
+border-radius:30px;
+font-weight:600;
+color:#0b3c5d;
+transition:0.3s;
+cursor:pointer;
+}
+
+.acessibilidade-buttons button:hover{
+background:#e63946;
+color:white;
+transform:translateY(-3px);
+}
+
+/* RESPONSIVIDADE */
+
 @media (max-width:768px){
 
 .hero{
@@ -246,7 +321,6 @@ font-size:28px;
 font-size:15px;
 }
 
-/* HISTORIA desce mais */
 .historia{
 padding:60px 15px;
 margin-top:20px;
@@ -260,12 +334,10 @@ flex-direction:column;
 margin-bottom:20px;
 }
 
-/* SERVIÇOS */
 .grid-servicos{
 grid-template-columns:1fr;
 }
 
-/* APP seção */
 .app .row{
 flex-direction:column;
 text-align:center;
@@ -275,37 +347,29 @@ text-align:center;
 margin-top:20px;
 }
 
-/* EVITA appbar cobrir conteúdo */
 body{
 padding-bottom:80px;
 }
 
-/* AJUSTE WHATSAPP */
 .whatsapp-float{
 bottom:90px;
 }
 
 }
-.footer a,
-.footer a:visited,
-.footer a:active {
-  color: white !important;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: #ddd !important;
-}
 
 </style>
+
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark">
+
 <div class="container">
 
-<a class="navbar-brand" href="#">Ótica Boa Vista</a>
+<a class="navbar-brand" href="#">
+Ótica Boa Vista
+</a>
 
 <div class="navbar-nav ms-auto">
 <a class="nav-link active" href="#">Início</a>
@@ -313,6 +377,7 @@ bottom:90px;
 </div>
 
 </div>
+
 </nav>
 
 <div class="horario">
@@ -321,7 +386,9 @@ Segunda a Sexta: 08h às 17h | Sábado: 08h às 13h
 </div>
 
 <section class="hero" data-aos="fade-up">
+
 <div class="container">
+
 <div class="row align-items-center">
 
 <div class="col-md-6" data-aos="fade-right">
@@ -339,12 +406,15 @@ Agendar exame
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 <section class="historia" data-aos="fade-up">
 
 <div class="container">
+
 <div class="row align-items-center">
 
 <div class="col-md-6" data-aos="fade-right">
@@ -370,6 +440,7 @@ Nosso compromisso é proporcionar conforto, estilo e confiança para que você e
 </div>
 
 </div>
+
 </div>
 
 </section>
@@ -378,7 +449,9 @@ Nosso compromisso é proporcionar conforto, estilo e confiança para que você e
 
 <div class="container">
 
-<h2 class="titulo-servicos">Nossos Serviços</h2>
+<h2 class="titulo-servicos">
+Nossos Serviços
+</h2>
 
 <div class="grid-servicos">
 
@@ -415,13 +488,18 @@ Nosso compromisso é proporcionar conforto, estilo e confiança para que você e
 </div>
 
 </div>
+
+</div>
+
 </section>
 
 <section class="cta" data-aos="fade-up">
 
 <div class="container">
 
-<h2>Agende seu exame de vista hoje mesmo</h2>
+<h2>
+Agende seu exame de vista hoje mesmo
+</h2>
 
 <p class="mb-4">
 Cuidar da visão é essencial para sua qualidade de vida.
@@ -451,9 +529,9 @@ acompanhar novidades e comprar óculos com muito mais facilidade.
 </p>
 
 <ul>
-<li> Catálogo Completo de Armações</li>
-<li> Ofertas Exclusivas</li>
-<li> Compra Rápida e Segura</li>
+<li>Catálogo Completo de Armações</li>
+<li>Ofertas Exclusivas</li>
+<li>Compra Rápida e Segura</li>
 </ul>
 
 <a href="#" class="btn btn-primary btn-lg">
@@ -476,12 +554,17 @@ Baixar aplicativo
 
 <div class="container text-center">
 
-<h2 class="mb-4">Nossa Localização</h2>
+<h2 class="mb-4">
+Nossa Localização
+</h2>
 
 <p class="mb-4">
 <i class="fa-solid fa-location-dot" style="color:#e63946;font-size:24px;"></i><br>
+
 <strong>Ótica Boa Vista</strong><br>
+
 Jardim Céu Azul, Valparaíso de Goiás - GO
+
 </p>
 
 <div class="map-container">
@@ -510,14 +593,47 @@ loading="lazy">
 <p>Sua visão em primeiro lugar</p>
 
 <p>
+
 <a href="https://www.instagram.com/oticaboavistaa_/" target="_blank">
-<i class="fa-brands fa-instagram"></i> Instagram
+<i class="fa-brands fa-instagram"></i>
+Instagram
 </a>
+
 |
+
 <a href="https://wa.me/556186445438" target="_blank">
-<i class="fa-brands fa-whatsapp"></i> WhatsApp
+<i class="fa-brands fa-whatsapp"></i>
+WhatsApp
 </a>
+
 </p>
+
+<!-- ACESSIBILIDADE -->
+
+<div class="acessibilidade">
+
+<h5>
+<i class="fa-solid fa-universal-access"></i>
+Acessibilidade
+</h5>
+
+<div class="acessibilidade-buttons">
+
+<button onclick="alterarFonte(1)">
+A+
+</button>
+
+<button onclick="alterarFonte(-1)">
+A-
+</button>
+
+<button onclick="document.body.classList.toggle('contraste')">
+Alto Contraste
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -528,20 +644,123 @@ loading="lazy">
 <a href="#">Baixar</a>
 </div>
 
-<a href="https://wa.me/556186445438" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/556186445438"
+class="whatsapp-float"
+target="_blank">
+
 <i class="fa-brands fa-whatsapp"></i>
+
 </a>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
+
 AOS.init({
 duration:1000,
 once:true,
 offset:120
 });
-</script>
 
+/* =========================
+ALTO CONTRASTE
+========================= */
+
+const estiloContraste = document.createElement('style');
+
+estiloContraste.innerHTML = `
+
+.contraste{
+background:black !important;
+color:white !important;
+}
+
+/* FUNDOS */
+
+.contraste section,
+.contraste footer,
+.contraste nav,
+.contraste .appbar,
+.contraste .card-servico,
+.contraste .historia,
+.contraste .app,
+.contraste .localizacao,
+.contraste .horario{
+background:black !important;
+color:white !important;
+}
+
+/* TEXTOS */
+
+.contraste h1,
+.contraste h2,
+.contraste h3,
+.contraste h4,
+.contraste h5,
+.contraste p,
+.contraste a,
+.contraste li,
+.contraste strong{
+color:white !important;
+}
+
+/* BOTÕES */
+
+.contraste .btn-agendar,
+.contraste .btn,
+.contraste .btn-cta,
+.contraste .appbar a,
+.contraste .acessibilidade-buttons button{
+background:white !important;
+color:black !important;
+border:2px solid white !important;
+}
+
+/* HOVER */
+
+.contraste .btn-agendar:hover,
+.contraste .btn:hover,
+.contraste .btn-cta:hover,
+.contraste .appbar a:hover,
+.contraste .acessibilidade-buttons button:hover{
+background:#e63946 !important;
+color:white !important;
+}
+
+/* NAVBAR */
+
+.contraste .nav-link,
+.contraste .navbar-brand{
+color:white !important;
+}
+
+`;
+
+document.head.appendChild(estiloContraste);
+
+/* =========================
+CONTROLE DE FONTE
+========================= */
+
+let tamanhoAtual = 16;
+
+function alterarFonte(valor){
+
+tamanhoAtual += valor * 2;
+
+if(tamanhoAtual < 12){
+tamanhoAtual = 12;
+}
+
+if(tamanhoAtual > 32){
+tamanhoAtual = 32;
+}
+
+document.body.style.fontSize = tamanhoAtual + "px";
+
+}
+
+</script>
 
 </body>
 </html>
