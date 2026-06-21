@@ -24,7 +24,7 @@ window.logout = function () {
   });
 };
 
-// 🔥 FUNÇÃO QUE BUSCA E MOSTRA OS DADOS
+// 🔥 FUNÇÃO QUE BUSCA E MOSTRA OS DADOS OTIMIZADA
 async function carregarAgendamentos() {
 
   const tabela = document.getElementById("tabela");
@@ -37,7 +37,6 @@ async function carregarAgendamentos() {
   console.log("📡 Buscando agendamentos...");
 
   try {
-
     const snapshot = await getDocs(collection(db, "agendamentos"));
 
     console.log("📊 Total encontrados:", snapshot.size);
@@ -55,15 +54,39 @@ async function carregarAgendamentos() {
       return;
     }
 
+    // 1️⃣ COLOCA OS DADOS EM UMA LISTA PARA PODER ORDENAR
+    const listaAgendamentos = [];
     snapshot.forEach((doc) => {
-      const d = doc.data();
+      listaAgendamentos.push(doc.data());
+    });
 
+    // 2️⃣ ORDENA POR DATA E DEPOIS POR HORÁRIO (QUEM VAI PRIMEIRO)
+    listaAgendamentos.sort((a, b) => {
+      // Se as datas forem diferentes, ordena pela data
+      if (a.data !== b.data) {
+        return a.data.localeCompare(b.data);
+      }
+      // Se as datas forem iguais, desempata pelo horário
+      return a.horario.localeCompare(b.horario);
+    });
+
+    // 3️⃣ GERA AS LINHAS DA TABELA JÁ COM A DATA FORMATADA
+    listaAgendamentos.forEach((d) => {
       console.log(d);
+
+      // Converte "2026-06-21" para "21/06/2026"
+      let dataFormatada = "-";
+      if (d.data && d.data.includes("-")) {
+        const [ano, mes, dia] = d.data.split("-");
+        dataFormatada = `${dia}/${mes}/${ano}`;
+      } else if (d.data) {
+        dataFormatada = d.data; // Mantém caso já esteja formatada por algum motivo
+      }
 
       tabela.innerHTML += `
         <tr>
           <td>${d.nome || "-"}</td>
-          <td>${d.data || "-"}</td>
+          <td>${dataFormatada}</td>
           <td>${d.horario || "-"}</td>
           <td>${d.telefone || "-"}</td>
           <td>${d.primeiraConsulta || "-"}</td>
