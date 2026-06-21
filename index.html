@@ -264,44 +264,70 @@ z-index:2000;
 text-decoration:none;
 }
 
-/* ACESSIBILIDADE */
+/* RESPONSIVIDADE */
 
-.acessibilidade{
-margin-top:30px;
-padding-top:25px;
-border-top:1px solid rgba(255,255,255,0.2);
-text-align:center;
-}
+/* ACESSIBILIDADE MODERNA */
 
-.acessibilidade h5{
-font-size:18px;
-margin-bottom:15px;
-font-weight:600;
-color:white;
-}
-
-.acessibilidade-buttons{
+.acessibilidade-widget{
+position:fixed;
+left:0;
+top:50%;
+transform:translateY(-50%);
+z-index:3000;
 display:flex;
-justify-content:center;
-gap:12px;
-flex-wrap:wrap;
+align-items:flex-start;
 }
 
-.acessibilidade-buttons button{
-background:white;
+.acessibilidade-toggle{
+background:#0b3c5d;
+color:white;
 border:none;
-padding:10px 18px;
-border-radius:30px;
+width:55px;
+height:55px;
+font-size:24px;
+cursor:pointer;
+border-radius:0 12px 12px 0;
+box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+
+.acessibilidade-painel{
+position:absolute;
+left:-220px;
+top:0;
+width:220px;
+background:white;
+padding:15px;
+border-radius:0 12px 12px 0;
+box-shadow:0 4px 20px rgba(0,0,0,.15);
+transition:.3s;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.acessibilidade-widget.open .acessibilidade-painel{
+left:55px;
+}
+
+.acessibilidade-painel h6{
+margin:0 0 10px;
 font-weight:600;
 color:#0b3c5d;
-transition:0.3s;
-cursor:pointer;
 }
 
-.acessibilidade-buttons button:hover{
-background:#e63946;
+.acessibilidade-painel button{
+border:none;
+padding:10px;
+border-radius:8px;
+background:#f3f5f7;
+text-align:left;
+font-weight:500;
+transition:.3s;
+}
+
+.acessibilidade-painel button:hover{
+background:#0b3c5d;
 color:white;
-transform:translateY(-3px);
 }
 
 /* RESPONSIVIDADE */
@@ -534,10 +560,9 @@ acompanhar novidades e comprar óculos com muito mais facilidade.
 <li>Compra Rápida e Segura</li>
 </ul>
 
-<a href="#" class="btn btn-primary btn-lg">
+<a href="https://drive.google.com/file/d/14OJiR47142XMWEeT13TB6pVojUhqtU3j/view?usp=sharing" target="_blank" class="btn btn-primary btn-lg">
 Baixar aplicativo
 </a>
-
 </div>
 
 <div class="col-md-6 text-center">
@@ -608,40 +633,14 @@ WhatsApp
 
 </p>
 
-<!-- ACESSIBILIDADE -->
-
-<div class="acessibilidade">
-
-<h5>
-<i class="fa-solid fa-universal-access"></i>
-Acessibilidade
-</h5>
-
-<div class="acessibilidade-buttons">
-
-<button onclick="alterarFonte(1)">
-A+
-</button>
-
-<button onclick="alterarFonte(-1)">
-A-
-</button>
-
-<button onclick="document.body.classList.toggle('contraste')">
-Alto Contraste
-</button>
-
-</div>
-
-</div>
-
-</div>
 
 </footer>
 
+
 <div class="appbar">
 <p>Conheça Nosso Aplicativo e Veja Todas as Armações!</p>
-<a href="#">Baixar</a>
+<a href="https://drive.google.com/file/d/14OJiR47142XMWEeT13TB6pVojUhqtU3j/view?usp=sharing" target="_blank">Baixar</a>
+</div>
 </div>
 
 <a href="https://wa.me/556186445438"
@@ -710,7 +709,7 @@ color:white !important;
 .contraste .btn,
 .contraste .btn-cta,
 .contraste .appbar a,
-.contraste .acessibilidade-buttons button{
+.contraste .acessibilidade-painel button{
 background:white !important;
 color:black !important;
 border:2px solid white !important;
@@ -722,7 +721,7 @@ border:2px solid white !important;
 .contraste .btn:hover,
 .contraste .btn-cta:hover,
 .contraste .appbar a:hover,
-.contraste .acessibilidade-buttons button:hover{
+.contraste .acessibilidade-painel button:hover{
 background:#e63946 !important;
 color:white !important;
 }
@@ -732,6 +731,17 @@ color:white !important;
 .contraste .nav-link,
 .contraste .navbar-brand{
 color:white !important;
+}
+
+.contraste .acessibilidade-painel{
+background:black !important;
+border:1px solid white;
+}
+
+.contraste .acessibilidade-toggle{
+background:black !important;
+color:white !important;
+border:1px solid white;
 }
 
 `;
@@ -761,6 +771,37 @@ document.body.style.fontSize = tamanhoAtual + "px";
 }
 
 </script>
+
+</div>
+
+<div class="acessibilidade-widget">
+
+<button class="acessibilidade-toggle"
+onclick="document.querySelector('.acessibilidade-widget').classList.toggle('open')">
+
+<i class="fa-solid fa-wheelchair"></i>
+
+</button>
+
+<div class="acessibilidade-painel">
+
+<h6>Acessibilidade</h6>
+
+<button onclick="alterarFonte(1)">
+<i class="fa-solid fa-plus"></i> Aumentar Fonte
+</button>
+
+<button onclick="alterarFonte(-1)">
+<i class="fa-solid fa-minus"></i> Diminuir Fonte
+</button>
+
+<button onclick="document.body.classList.toggle('contraste')">
+<i class="fa-solid fa-circle-half-stroke"></i> Contraste
+</button>
+
+</div>
+
+</div>
 
 </body>
 </html>
